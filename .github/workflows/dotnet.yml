@@ -31,8 +31,9 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3.1.2
       with:
+        name: MatchGame
         path: MatchGame/bin/Release/net7.0-windows
-        warn:
+        
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
     
