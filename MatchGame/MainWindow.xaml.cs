@@ -51,13 +51,13 @@ namespace MatchGame
             }
         }
 
-        TextBlock lastTextBlockClicked;
+        TextBlock? lastTextBlockClicked;
         bool findingMatch = false;
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var textBlock = sender as TextBlock;
-
+            if (sender is not TextBlock textBlock || lastTextBlockClicked is null) return;
+            
             if (!findingMatch)
             {
                 textBlock.Visibility = Visibility.Hidden;
